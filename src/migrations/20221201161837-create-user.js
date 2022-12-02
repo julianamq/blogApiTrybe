@@ -9,7 +9,7 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      display_name: {
+      displayName: {
         type: Sequelize.STRING,
         allowNull: false,
         field: 'display_name'
@@ -26,7 +26,10 @@ module.exports = {
       image: {
         type: Sequelize.STRING,
         allowNull: false,
-      }
+      },
+    },
+      {
+      timestamps: false
     });
   },
 

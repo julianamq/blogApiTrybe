@@ -1,4 +1,4 @@
-module.exports = (sequelize, DataTypes) => {
+const CreateCategory = (sequelize, DataTypes) => {
   const Category = sequelize.define('Category', {
     id: { type: DataTypes.INTEGER, primaryKey: true },
     name: DataTypes.STRING
@@ -8,5 +8,7 @@ module.exports = (sequelize, DataTypes) => {
     underscored: true,
     tableName: 'categories'
   });
-}
+
   return Category;
+}
+  module.exports = CreateCategory;

@@ -1,8 +1,8 @@
 const express = require('express');
-const CreateBlogPost = require('./models/CreateBlogPost');
-const CreateCategory = require('./models/Category');
-const CreateCategoryPost = require('./models/CreateCategoryPost');
 const CreateUser = require('./models/CreateUser');
+const CreateBlogPost = require('./models/CreateBlogPost');
+const CreateCategoryPost = require('./models/CreateCategoryPost');
+const CreateCategory = require('./models/Category');
 
 // ...
 
