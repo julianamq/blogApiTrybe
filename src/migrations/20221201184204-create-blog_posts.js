@@ -17,7 +17,7 @@ module.exports = {
         allowNull: false,
         type: Sequelize.STRING
       },
-      userId: {
+      user_id: {
         allowNull: false,
         type: Sequelize.INTEGER,
         references: {
@@ -41,7 +41,8 @@ module.exports = {
       },
     },
       {
-      timestamps: false
+      timestamps: false,
+    
     });
   },
   down: async (queryInterface, Sequelize) => {
