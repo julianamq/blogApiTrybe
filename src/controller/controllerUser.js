@@ -5,8 +5,8 @@ const createUser = async (request, response) => {
         const { displayName, email, password, image } = request.body;
         // console.log('controller ');
         const { getToken } = await userService.createUser({ displayName, email, password, image });
-        console.log(getToken, ' linha 8 controller');
-        return response.status(201).json({ getToken });
+        console.log({ getToken }, ' linha 8 controller'); // trazendo o token
+        return response.status(201).json({ token: getToken });
     } catch (error) {
        return response.status(409).json({ message: 'User already registered' });
         }

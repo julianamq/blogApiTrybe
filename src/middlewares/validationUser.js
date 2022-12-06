@@ -1,7 +1,7 @@
 const joi = require('joi');
 
 const validateUser = (request, response, next) => {
-    const { displayName, email, password, image } = request.body;
+    const requisicao = request.body;
     const schema = joi.object({
         displayName: joi.string().min(8).required().messages({
             'string.min': '"displayName" length must be at least 8 characters long',
@@ -14,7 +14,8 @@ const validateUser = (request, response, next) => {
         }),
         image: joi.string(),
     });
-    const { error } = schema.validate({ displayName, email, password, image });
+
+    const { error } = schema.validate(requisicao);
     if (error) {
        return response.status(400).json({ message: error.details[0].message });
     }
