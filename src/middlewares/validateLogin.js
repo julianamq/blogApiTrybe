@@ -6,7 +6,7 @@ const secret = process.env.JWT_SECRET || 'seusecretdetoken';
 
 const validateTokenLogin = async (request, response, next) => {
   const token = request.headers.authorization;
-  console.log(token, 'linha 09 validação');
+  // console.log(token, 'linha 09 validação');
   if (!token) {
     return response.status(401).json({ message: 'Token not found' });
   }

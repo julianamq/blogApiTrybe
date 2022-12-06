@@ -14,6 +14,7 @@ app.use(express.json());
 app.use('/login', routerLogin);
 
 app.use('/user', routerUser);
+
 // app.use('/blog_posts', CreateBlogPost);
 // app.use('/posts_categories', CreateCategoryPost);
 // app.use('/categories', CreateCategory);
