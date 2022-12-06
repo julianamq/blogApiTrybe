@@ -4,7 +4,7 @@ const secret = process.env.JWT_SECRET || 'seusecretdetoken';
 
 const jwtConfig = {
   algorithm: 'HS256',
-  expiresIn: '20d',
+  expiresIn: '2d',
 };
 
 const createToken = async (loginWithoutPassword) => {
@@ -12,7 +12,7 @@ const createToken = async (loginWithoutPassword) => {
   return token;
 };
 
-const validateToken = async (token) => {
+const validateToken = (token) => {
   try {
     if (!token) return { error: 'Token not found' };
     const validation = jwt.verify(token, secret);
