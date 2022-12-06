@@ -16,9 +16,9 @@ const validateUser = (request, response, next) => {
     });
     const { error } = schema.validate({ displayName, email, password, image });
     if (error) {
-        response.status(400).json({ message: error.details[0].message });
-        return next();
+       return response.status(400).json({ message: error.details[0].message });
     }
+    return next();
 };
     module.exports = {
         validateUser,
