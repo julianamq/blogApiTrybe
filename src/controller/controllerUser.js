@@ -13,12 +13,21 @@ const createUser = async (request, response) => {
 };
 const getUser = async (_request, response) => {
     const users = await userService.getUser();
-    console.log(users, 'controller log linha 16S');
     return response.status(200).json(users);
 };
-
+const getUserById = async (request, response) => {
+    const { id } = request.params;
+    const user = await userService.getUserById(id);
+    if (!user) {
+        return response.status(404).json({
+            message: 'User does not exist',
+        });
+    }
+    return response.status(200).json(user);
+};
 module.exports = {
     createUser,
     getUser,
+    getUserById,
 
 };

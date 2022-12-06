@@ -16,9 +16,13 @@ const getUser = async () => {
     //  https://sequelize.org/docs/v6/core-concepts/model-querying-basics/
      return usuarios;
 };
-
+const getUserById = async (id) => {
+    const user = await User.findByPk(id, { attributes: { exclude: ['password'] } });
+    return user;
+};
 module.exports = { 
     createUser,
     getUser,
+    getUserById,
 
 };
