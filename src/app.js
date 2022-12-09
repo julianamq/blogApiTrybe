@@ -3,6 +3,7 @@ const routerLogin = require('./router/routerLogin');
 const routerUser = require('./router/routerUser');
 const routerCategory = require('./router/routerCategory');
 const routerBlogPost = require('./router/routerBlogPost');
+const routerPost = require('./router/routerPost');
 
 const app = express();
 
@@ -11,6 +12,7 @@ app.use('/login', routerLogin);
 app.use('/user', routerUser);
 app.use('/categories', routerCategory);
 app.use('/post', routerBlogPost);
+app.use('/post', routerPost);
 
 // É importante exportar a constante `app`,
 // para que possa ser utilizada pelo arquivo `src/server.js`

@@ -4,7 +4,8 @@ const CreateCategoryPost = (sequelize, DataTypes) => {
       category_id: DataTypes.INTEGER,
     }, {
       timestamps: false,
-      tableName: 'post_categories',
+      underscored: true,
+      tableName: 'posts_categories',
     });
     PostCategory.associate = (models) => {
       models.BlogPost.belongsToMany(models.Category, {
