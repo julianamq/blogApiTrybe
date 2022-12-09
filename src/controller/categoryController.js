@@ -11,7 +11,9 @@ const getCategory = async (request, response) => {
     console.log(dados, 'dados linha 10');
     return response.status(200).json(dados);
 };
+
 module.exports = {
     newCategories,
     getCategory,
+  
 };
