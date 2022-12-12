@@ -5,7 +5,7 @@ const CreateCategory = (sequelize, DataTypes) => {
   },
   {
     timestamps: false,
-    underscored: true,
+ 
     tableName: 'categories'
   });
 
