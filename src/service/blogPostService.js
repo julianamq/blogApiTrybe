@@ -1,4 +1,4 @@
-const { BlogPost, PostCategory, User } = require('../models');
+const { BlogPost, Category, User } = require('../models');
 
 // const createPost = async (reqBody) => { //  tentativa da 12
 //     const { title, content, category } = reqBody;
@@ -16,7 +16,7 @@ const getAllPosts = async () => {
     const allPosts = await BlogPost.findAll({
       include: [
         { model: User, as: 'user', attributes: { exclude: ['password'] } },
-        { model: PostCategory, as: 'categories', through: { attributes: [] } },
+        { model: Category, as: 'categories', through: { attributes: [] } },
       ],
     });
     if (!allPosts) return { message: 'Posts not found' };
@@ -27,7 +27,7 @@ const getAllPosts = async () => {
     const isPost = await BlogPost.findByPk(id, {
       include: [
         { model: User, as: 'user', attributes: { exclude: ['password'] } },
-        { model: PostCategory, as: 'categories', through: { attributes: [] } },
+        { model: Category, as: 'categories', through: { attributes: [] } },
       ],
     });
     console.log(isPost, ' linha 33 post service');
