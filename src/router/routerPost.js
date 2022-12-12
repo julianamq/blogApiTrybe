@@ -1,9 +1,9 @@
 const express = require('express');
-const { getAllPosts } = require('../controller/postController');
+const { getAllPosts, getPostById } = require('../controller/blogPostController');
 const { validateTokenLogin } = require('../middlewares/validateLogin');
 
 const router = express.Router();
 
-router.get('/post', validateTokenLogin, getAllPosts);
-
+router.get('/', validateTokenLogin, getAllPosts);
+router.get('/:id', validateTokenLogin, getPostById);
 module.exports = router;
